@@ -1,0 +1,1 @@
+import{_ as o,o as t,h as c,b as r,e as n,K as s}from"./index-_SGTYUws.js";const a={};function _(l,i){const e=n("RouterView");return t(),c(s,null,[r(e)],1024)}const f=o(a,[["render",_]]);export{f as default};
