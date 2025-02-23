@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - dev
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -36,6 +37,7 @@ jobs:
     # Add a dependency to the build job
     needs: build
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     steps:
       - name: Deploy using SSH to Server
         uses: appleboy/ssh-action@v1.2.0
