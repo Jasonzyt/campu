@@ -68,4 +68,12 @@ a {
   table {
     @apply table-auto;
   }
+
+  blockquote {
+    @apply border-l-4;
+    @apply border-gray-300;
+    @apply pl-4;
+    @apply italic;
+    @apply text-gray-700;
+  }
 }
