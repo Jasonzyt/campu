@@ -46,7 +46,35 @@ const items = [
 ];
 
 const store = useMyStore();
+const router = useRouter();
+
 const barPinned = ref(false);
+const itemShow = ref(barPinned.value);
+
+const handleMouseOver = () => {
+  itemShow.value = true;
+};
+
+const handleMouseLeave = () => {
+  itemShow.value = false;
+};
+
+const handleClick = (index: string) => {
+  switch (index) {
+    case "blog":
+      router.push("/blog");
+      break;
+    case "gallery":
+      router.push("/gallery");
+      break;
+    case "about":
+      router.push("/about");
+      break;
+    default:
+      router.push("/");
+      break;
+  }
+};
 
 watch(
   () => store.navBarPinned,
@@ -55,16 +83,6 @@ watch(
     itemShow.value = newValue;
   }
 );
-
-const itemShow = ref(barPinned.value);
-const handleMouseOver = () => {
-  itemShow.value = true;
-};
-const handleMouseLeave = () => {
-  itemShow.value = false;
-};
-
-const handleClick = (index: string) => {};
 </script>
 
 <style scoped>

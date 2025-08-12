@@ -1,7 +1,13 @@
 <template>
-  <li class="item inline-flex justify-center items-center font-semibold ml-4" :class="show ? 'show' : 'hidden'"
-    :style="{ '--border-width': borderWidth }" :index="index" @mouseover="handleMouseOver"
-    @mouseleave="handleMouseLeave" @click="$emit('click', index)">
+  <li
+    class="item inline-flex justify-center items-center font-semibold ml-4"
+    :class="show ? 'opacity-100' : 'opacity-0'"
+    :style="{ '--border-width': borderWidth }"
+    :index="index"
+    @mouseover="handleMouseOver"
+    @mouseleave="handleMouseLeave"
+    @click="$emit('click', index)"
+  >
     <slot></slot>
   </li>
 </template>
@@ -9,19 +15,19 @@
 <script lang="ts" setup>
 defineProps({
   show: Boolean,
-  index: String
-})
+  index: String,
+});
 
-defineEmits(['click'])
+defineEmits(["click"]);
 
-const borderWidth = ref('0')
+const borderWidth = ref("0");
 
 const handleMouseOver = () => {
-  borderWidth.value = '90%'
-}
+  borderWidth.value = "90%";
+};
 const handleMouseLeave = () => {
-  borderWidth.value = '0'
-}
+  borderWidth.value = "0";
+};
 </script>
 
 <style scoped>
@@ -32,14 +38,12 @@ const handleMouseLeave = () => {
   color: rgb(var(--color-gray-600));
   position: relative;
   cursor: pointer;
-  transition:
-    border-bottom 0.4s ease-in-out,
-    color 0.4s ease-in-out,
+  transition: border-bottom 0.4s ease-in-out, color 0.4s ease-in-out,
     opacity 0.4s ease-in-out;
 }
 
 .item::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   bottom: 0;
