@@ -1,0 +1,10 @@
+@import "tailwindcss/theme.css" layer(theme);
+
+@theme {
+  --font-sans: Rubik, "Noto Sans", "Noto Sans SC", "Noto Sans JP", -apple-system,
+    BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  --font-serif: "Noto Serif", "Noto Serif SC", "Noto Serif JP", Georgia, Cambria,
+    "Times New Roman", Times, serif;
+  --font-mono: "JetBrains Mono", "Ubuntu Mono", SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+}
