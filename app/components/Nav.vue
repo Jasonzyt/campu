@@ -40,9 +40,9 @@
 
 <script setup lang="ts">
 const items = [
-  { index: "blog", text: "Blog", icon: "i-mdi-feather" },
-  { index: "gallery", text: "Gallery", icon: "i-bxs-photo-album" },
-  { index: "about", text: "About", icon: "i-material-symbols-person" },
+  { index: "blog", text: "Blog", icon: "i-my-feather" },
+  { index: "gallery", text: "Gallery", icon: "i-my-photo" },
+  { index: "about", text: "About", icon: "i-my-user" },
 ];
 
 const store = useMyStore();

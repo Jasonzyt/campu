@@ -20,7 +20,7 @@ export default defineNuxtConfig({
     customCollections: [
       {
         prefix: "my",
-        dir: "./app/assets/icon/my",
+        dir: "./app/assets/icon/",
       },
     ],
   },
