@@ -19,16 +19,15 @@
     "axios": "^1.11.0",
     "better-sqlite3": "^12.2.0",
     "eslint": "^9.33.0",
+    "node-addon-api": "^8.5.0",
+    "node-gyp": "^11.3.0",
     "nuxt": "^4.0.3",
     "pinia": "^3.0.3",
+    "sharp": "^0.34.3",
     "tailwindcss": "^4.1.10",
     "typescript": "^5.9.2",
+    "ufo": "^1.6.1",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "better-sqlite3"
-    ]
   }
 }
