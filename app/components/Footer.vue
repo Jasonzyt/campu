@@ -49,7 +49,6 @@ const copyright = `&copy; ZYT &nbsp;${new Date().getFullYear()}`;
 <style scoped>
 .footer {
   height: 12rem;
-  color: var(--color-gray-600);
   text-align: center;
   padding: 50px;
 }

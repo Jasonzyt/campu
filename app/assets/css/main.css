@@ -7,6 +7,10 @@
 @import "tailwindcss/utilities.css" layer(utilities);
 
 @layer base {
+  .dark {
+    --ui-text: var(--ui-color-neutral-300);
+  }
+
   *,
   *::before,
   *::after {

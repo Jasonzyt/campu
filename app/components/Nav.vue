@@ -1,7 +1,7 @@
 <template>
   <!-- <NavMobileBar :items="items" :show="barPinned" /> -->
   <ul
-    class="bg-white dark:bg-gray-900 navbar flex px-4 max-sm:hidden"
+    class="bg-white dark:bg-gray-800 navbar flex px-4 max-sm:hidden"
     :style="barPinned || itemShow ? '' : 'background-color: rgba(0, 0, 0, 0)'"
     @mouseover="handleMouseOver"
     @mouseleave="handleMouseLeave"

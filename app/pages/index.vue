@@ -2,7 +2,7 @@
   <Welcome />
   <div class="main">
     <section class="mb-8" id="pinned">
-      <h2 class="mb-4 font-bold text-xl text-gray-600">
+      <h2 class="mb-4 font-bold text-xl">
         <Icon class="align-text-top" name="my:anchor" size="20px" />
         Discovery
       </h2>
