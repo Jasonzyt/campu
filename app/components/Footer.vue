@@ -35,11 +35,19 @@ const copyright = `&copy; ZYT &nbsp;${new Date().getFullYear()}`;
       <p class="powered-by">
         Powered by
         <a href="https://github.com/Jasonzyt/campu" class="campu">
-          <Icon name="my:campu-logo" size="0.8em" />
+          <Icon
+            name="my:campu-logo"
+            size="0.8em"
+            style="color: var(--ui-text-toned)"
+          />
         </a>
         with
-        <a href="https://vuejs.org/" class="nuxt">
-          <Icon name="logos:nuxt" size="0.8em" />
+        <a href="https://nuxt.com/" class="nuxt">
+          <Icon
+            name="my:nuxt-logo"
+            size="0.8em"
+            style="color: var(--ui-text-toned)"
+          />
         </a>
       </p>
     </div>
