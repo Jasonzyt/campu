@@ -72,7 +72,7 @@ import vue from "vue";
 ![左对齐](/assets/img/blogs/hello-world/112981252_p0.jpg){align=left}
 ![右对齐](/assets/img/blogs/hello-world/112981252_p0.jpg){align=right}
 
-```python
+```python {5}
 from PIL import Image
 from waifu_sensor.v3 import predict
 

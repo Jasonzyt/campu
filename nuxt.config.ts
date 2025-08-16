@@ -27,4 +27,43 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  content: {
+    build: {
+      markdown: {
+        remarkPlugins: {
+          "remark-math": {},
+        },
+        rehypePlugins: { "rehype-katex": {} },
+
+        highlight: {
+          theme: {
+            default: "one-light",
+            dark: "one-dark-pro",
+            sepia: "monokai",
+          },
+          langs: [
+            "json",
+            "js",
+            "ts",
+            "html",
+            "css",
+            "vue",
+            "shell",
+            "mdc",
+            "md",
+            "yaml",
+            "c",
+            "cpp",
+            "java",
+            "kotlin",
+            "cmake",
+            "go",
+            "lua",
+            "python",
+            "bash",
+          ],
+        },
+      },
+    },
+  },
 });

@@ -52,6 +52,76 @@
     @apply font-bold;
   }
 
+  code {
+    @apply font-mono;
+    @apply text-gray-700;
+    font-size: 0.9em;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  li {
+    @apply ml-4;
+  }
+
+  table {
+    @apply table-auto;
+  }
+
+  blockquote {
+    @apply border-l-4;
+    @apply border-gray-300;
+    @apply pl-4;
+    @apply italic;
+    @apply text-gray-700;
+  }
+
+  :not(pre) > code {
+    padding: 0.2em 0.35em;
+    margin: 0 2px;
+    border-radius: 3px;
+    background-color: var(--ui-bg-muted);
+  }
+
+  .katex-html {
+    display: none;
+  }
+
+  .myscroll::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    border-radius: 5px;
+    background-color: var(--ui-bg-elevated);
+  }
+
+  .myscroll::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: var(--ui-bg-accented);
+  }
+
+  .spoiler {
+    position: relative;
+    background-color: rgba(200, 200, 200, 0.3);
+    color: rgba(0, 0, 0, 0.5);
+    user-select: none;
+    overflow: hidden;
+    cursor: pointer;
+    filter: blur(3px);
+    transition: filter 0.3s ease;
+  }
+
+  .spoiler:hover {
+    background-color: inherit;
+    color: inherit;
+    filter: blur(0);
+  }
+
   .fade-enter-from,
   .fade-leave-to {
     opacity: 0;
