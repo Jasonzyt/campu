@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { BlogCollectionItem } from "@nuxt/content";
+import type { BlogCollectionItem } from "~/utils";
 
 const props = defineProps<{
   blog: BlogCollectionItem;
@@ -11,14 +11,8 @@ const displayViews = ref("-");
 </script>
 
 <template>
-  <UCard
-    class="transition-shadow hover:shadow-lg duration-300"
-    :ui="{ body: 'p-0 sm:p-0' }"
-  >
-    <div
-      class="flex max-md:hidden"
-      :class="coverPos == 'right' ? 'flex-row-reverse' : 'flex-row'"
-    >
+  <UCard class="transition-shadow hover:shadow-lg duration-300" :ui="{ body: 'p-0 sm:p-0' }">
+    <div class="flex max-md:hidden" :class="coverPos == 'right' ? 'flex-row-reverse' : 'flex-row'">
       <div class="cover">
         <NuxtLink :to="`/blog/${blog.slug}`">
           <NuxtImg :src="blog.cover" alt="cover" loading="lazy" />
@@ -27,9 +21,7 @@ const displayViews = ref("-");
       <div class="content">
         <div class="blog-content">
           <div class="header-and-info">
-            <div
-              class="header font-serif hover:text-primary-500 dark:hover:text-primary-600 transition-all"
-            >
+            <div class="header font-serif hover:text-primary-500 dark:hover:text-primary-600 transition-all">
               <NuxtLink :to="`/blog/${blog.slug}`">
                 <h1 dir="ltr">{{ blog.title }}</h1>
               </NuxtLink>
@@ -66,12 +58,7 @@ const displayViews = ref("-");
     <div class="md:hidden">
       <div class="w-full h-36 overflow-hidden">
         <NuxtLink :to="`/blog/${blog.slug}`">
-          <NuxtImg
-            class="size-full object-cover"
-            :src="blog.cover"
-            alt="cover"
-            loading="lazy"
-          />
+          <NuxtImg class="size-full object-cover" :src="blog.cover" alt="cover" loading="lazy" />
         </NuxtLink>
       </div>
       <div class="px-4 pt-4">
@@ -93,10 +80,7 @@ const displayViews = ref("-");
           </span>
           <span class="ml-1" v-if="false"
             ><!-- TODO: backend -->
-            <Icon
-              name="ic:round-local-fire-department"
-              class="text-sm mr-0.5"
-            />
+            <Icon name="ic:round-local-fire-department" class="text-sm mr-0.5" />
             <span v-html="displayViews"></span>
           </span>
         </div>

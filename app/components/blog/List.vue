@@ -1,20 +1,14 @@
 <template>
   <div class="grid gap-8" :class="`grid-cols-${columns}`">
     <div v-for="(blog, index) in list" :key="blog.slug">
-      <BlogListItem
-        :blog="blog"
-        :cover-pos="index % 2 != 0 ? 'left' : 'right'"
-      />
+      <BlogListItem :blog="blog" :cover-pos="index % 2 != 0 ? 'left' : 'right'" />
     </div>
   </div>
   <!-- TODO: Auto load more like gallery -->
 </template>
 
 <script lang="ts" setup>
-import {
-  type CollectionQueryBuilder,
-  type BlogCollectionItem,
-} from "@nuxt/content";
+import type { BlogCollectionItem } from "~/utils";
 
 const props = defineProps({
   columns: {
@@ -22,7 +16,7 @@ const props = defineProps({
     default: 1,
   },
   query: {
-    type: Object as () => CollectionQueryBuilder<BlogCollectionItem>,
+    type: Object,
     default: () => queryCollection("blog").order("created", "DESC"),
   },
 });
@@ -32,9 +26,7 @@ const loadedCount = ref(0);
 const endReached = ref(false);
 
 async function loadBlogs(count: number) {
-  const blogs = await useAsyncData(() =>
-    props.query.limit(count).skip(loadedCount.value).all()
-  ).then((res) => {
+  const blogs = await useAsyncData(() => props.query.limit(count).skip(loadedCount.value).all()).then((res) => {
     if (!res.data.value) {
       throw createError({
         statusCode: 404,

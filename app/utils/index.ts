@@ -25,3 +25,19 @@ export function updateHitokoto(): Ref<{ hitokoto: string; from: string }> {
 export function randInt(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+export type BlogCollectionItem = {
+  slug: string;
+  title: string;
+  description?: string;
+  cover?: string;
+  author: {
+    name: string;
+    avatar?: string;
+  };
+  tags: string[];
+  category: string;
+  pinned?: number;
+  created: string;
+  updated: string;
+};
