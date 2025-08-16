@@ -11,7 +11,10 @@ const displayViews = ref("-");
 </script>
 
 <template>
-  <UCard class="transition-shadow hover:shadow-md" :ui="{ body: 'p-0 sm:p-0' }">
+  <UCard
+    class="transition-shadow hover:shadow-lg duration-300"
+    :ui="{ body: 'p-0 sm:p-0' }"
+  >
     <div
       class="flex max-md:hidden"
       :class="coverPos == 'right' ? 'flex-row-reverse' : 'flex-row'"
@@ -24,7 +27,9 @@ const displayViews = ref("-");
       <div class="content">
         <div class="blog-content">
           <div class="header-and-info">
-            <div class="header font-serif">
+            <div
+              class="header font-serif hover:text-primary-500 dark:hover:text-primary-600 transition-all"
+            >
               <NuxtLink :to="`/blog/${blog.slug}`">
                 <h1 dir="ltr">{{ blog.title }}</h1>
               </NuxtLink>

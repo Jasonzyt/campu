@@ -1,5 +1,6 @@
 <template>
   <div class="main">
+    <!-- TODO: search -->
     <BlogList :columns="1" />
   </div>
 </template>
@@ -9,14 +10,6 @@ useHead({
   title: "Blogs",
 });
 </script>
-
-<style>
-@media screen and (min-width: 1000px) {
-  .el-input {
-    width: 600px;
-  }
-}
-</style>
 
 <style scoped>
 .main {

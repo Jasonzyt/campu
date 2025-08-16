@@ -7,6 +7,7 @@
       />
     </div>
   </div>
+  <!-- TODO: Auto load more like gallery -->
 </template>
 
 <script lang="ts" setup>
