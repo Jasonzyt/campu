@@ -6,6 +6,12 @@
 @import "./theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
 
+@custom-variant xs {
+  @media (min-width: 32rem) {
+    @slot;
+  }
+}
+
 @layer base {
   .dark {
     --ui-text: var(--ui-color-neutral-300);
