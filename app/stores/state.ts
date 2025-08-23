@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-export const useMyStore = defineStore("my", {
+export const useStateStore = defineStore("state", {
   state: () => ({
     navBarPinned: false,
   }),
