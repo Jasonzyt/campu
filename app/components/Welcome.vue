@@ -6,7 +6,7 @@
         <Icon class="align-text-top" name="ic:round-format-quote" style="transform: rotate(180deg)" />
         <span>{{ quote }}</span>
         <Icon class="align-text-top" name="ic:round-format-quote" />
-        <NavSocialBar class="mt-3 mb-2" size="1.5rem" tone="white" />
+        <NavSocialBar class="mt-3 mb-2" size="1.5rem" />
       </div>
     </div>
     <div class="hello table-cell sm:hidden">

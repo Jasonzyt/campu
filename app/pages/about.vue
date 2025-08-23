@@ -18,7 +18,11 @@
           我是 ZYT, 也可以叫我 Jacie(fka Jason), {{ age.year }}岁, 来自武汉! 是高中牲😢<br />
           写代码👨‍💻是爱好, 初一自学 C++, 曾经打过几年 OI, <del>也算是蒟蒻 OIer 吧</del><br />
           曾经为<NuxtLink class="link" to="https://minecraft.wiki/w/Bedrock_Dedicated_Server">Minecraft BDS</NuxtLink>圈子奉献<del>三年青春</del><br />
-          并曾致力于<NuxtLink class="link" to="https://github.com/LiteLDev/LeviLamina">LeviLamina</NuxtLink>的开发和 MCBE 的研究<!--不要玩基岩版! 基岩不行, 加瓦行-->, 是<NuxtLink class="link" to="https://github.com/LiteLDev">LeviMC</NuxtLink>的一份子! <br />
+          并曾致力于<NuxtLink class="link" to="https://github.com/LiteLDev/LeviLamina">LeviLamina</NuxtLink>的开发和 MCBE 的研究<!--不要玩基岩版! 基岩不行, 加瓦行-->, 是<NuxtLink
+            class="link"
+            to="https://github.com/LiteLDev"
+            >LeviMC</NuxtLink
+          >的一份子! <br />
           离开 BDS 圈子后, 开始学习 App 的开发, <del>勉强算半个 Full-stack 吧</del><br />
           除写码之外, 我也很喜欢拍照📷~ 是风光佬, 偶尔拍人文<br />
           喜欢各种交通工具, 尤其是飞机✈️和火车🚅!! <del>立志拍到全天下的所有飞机和火车</del><br />
@@ -46,12 +50,12 @@
         <div id="social">
           <h2 class="mb-2">Socials</h2>
           <div class="grid grid-cols-2 gap-3 xs:max-md:grid-cols-3 md:grid-cols-4 lg:gap-4">
-            <div v-for="social in socialList">
+            <div v-for="social in vars.socials">
               <NuxtLink :to="social.url">
                 <UCard class="hover:shadow-lg transition-shadow" :ui="{ body: 'p-4 sm:p-4' }">
                   <div class="grid grid-cols-3 gap-4">
                     <div class="col-span-1">
-                      <Icon :name="social.icon" mode="svg" width="100%" height="100%" />
+                      <Icon :name="social.icon" style="color: var(--ui-text)" mode="svg" width="100%" height="100%" />
                     </div>
                     <div class="col-span-2">
                       <h3 class="text-lg">{{ social.website }}</h3>
@@ -140,6 +144,8 @@ definePageMeta({
   layout: "no-footer",
 });
 
+const { variables: vars } = useAppConfig();
+
 const birthTime = new Date(2007, 10, 18, 23, 4);
 
 const now = new Date();
@@ -222,57 +228,6 @@ const gameList = [
   {
     name: "微软模飞",
     server: "2020",
-  },
-];
-
-const socialList = [
-  {
-    icon: "logos:github-icon",
-    website: "GitHub",
-    user: "@Jasonzyt",
-    url: "https://github.com/Jasonzyt",
-  },
-  {
-    icon: "my:bilibili-logo",
-    website: "Bilibili",
-    user: "@Jasonzyt",
-    url: "https://space.bilibili.com/403482845",
-  },
-  {
-    icon: "logos:twitter",
-    website: "Twitter",
-    user: "@Jasonzyt",
-    url: "https://x.com/Jasonzyt",
-  },
-  {
-    icon: "logos:telegram",
-    website: "Telegram",
-    user: "@Jasonzyt",
-    url: "https://t.me/Jasonzyt",
-  },
-  {
-    icon: "logos:discord-icon",
-    website: "Discord",
-    user: "@jasonzyt",
-    url: "https://discord.com",
-  },
-  {
-    icon: "my:steam-logo",
-    website: "Steam",
-    user: "@jasonzytt",
-    url: "https://steamcommunity.com/id/jasonzytt",
-  },
-  {
-    icon: "logos:youtube-icon",
-    website: "YouTube",
-    user: "@jasonzyt",
-    url: "https://www.youtube.com/@jasonzyt",
-  },
-  {
-    icon: "my:email",
-    website: "Email",
-    user: "@jasonzytt",
-    url: "mailto:jasonzytt@gmail.com",
   },
 ];
 

@@ -38,7 +38,18 @@ export default defineAppConfig({
         { path: "/assets/img/backgrounds/wall09.jpg", props: ["vertical", "light"] },
         { path: "/assets/img/backgrounds/wall22.jpg", props: ["vertical", "light"] },
       ],
+      displaySocials: ["GitHub", "Bilibili", "Twitter", "Telegram", "Discord", "Email"],
     },
+    socials: [
+      { icon: "uil:github", website: "GitHub", user: "@Jasonzyt", url: "https://github.com/Jasonzyt" },
+      { icon: "my:bilibili-logo", website: "Bilibili", user: "@Jasonzyt", url: "https://space.bilibili.com/403482845" },
+      { icon: "logos:twitter", website: "Twitter", user: "@Jasonzyt", url: "https://x.com/Jasonzyt" },
+      { icon: "logos:telegram", website: "Telegram", user: "@Jasonzyt", url: "https://t.me/Jasonzyt" },
+      { icon: "logos:discord-icon", website: "Discord", user: "@jasonzyt", url: "https://discord.com" },
+      { icon: "my:steam-logo", website: "Steam", user: "@jasonzytt", url: "https://steamcommunity.com/id/jasonzytt" },
+      { icon: "logos:youtube-icon", website: "YouTube", user: "@jasonzyt", url: "https://www.youtube.com/@jasonzyt" },
+      { icon: "my:email", website: "Email", user: "@jasonzytt", url: "mailto:jasonzytt@gmail.com" },
+    ],
   },
   ui: {
     colors: {
