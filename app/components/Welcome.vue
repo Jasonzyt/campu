@@ -1,23 +1,16 @@
 <template>
   <div class="background" ref="body">
     <div class="hello table-cell max-sm:hidden">
-      <h1>{{ welcome }}</h1>
-      <div
-        class="quote mx-auto my-6 px-5 py-3 text-2xl text-center select-none"
-      >
-        <Icon
-          class="align-text-top"
-          name="ic:round-format-quote"
-          style="transform: rotate(180deg)"
-        />
+      <h1>{{ vars.welcome.title }}</h1>
+      <div class="quote mx-auto my-6 px-5 py-3 text-2xl text-center select-none">
+        <Icon class="align-text-top" name="ic:round-format-quote" style="transform: rotate(180deg)" />
         <span>{{ quote }}</span>
-        <!-- <span>個性捨てたら，死んでるのと一緒だよ</span> -->
         <Icon class="align-text-top" name="ic:round-format-quote" />
         <NavSocialBar class="mt-3 mb-2" size="1.5rem" tone="white" />
       </div>
     </div>
     <div class="hello table-cell sm:hidden">
-      <h2>{{ welcome }}</h2>
+      <h2>{{ vars.welcome.title }}</h2>
     </div>
   </div>
   <div class="chevron-down" @click="handleClickDown">
@@ -26,87 +19,7 @@
 </template>
 
 <script setup lang="ts">
-const welcome = "Hi, ZYT here!";
-const quote = "Do the right thing, and wait to be fired.";
-
-const backgrounds = [
-  {
-    path: "/assets/img/backgrounds/74922836_p0.jpg",
-    props: ["horizontal", "dark"],
-  },
-  {
-    path: "/assets/img/backgrounds/100022190_p0.jpg",
-    props: ["horizontal", "light"],
-  },
-  {
-    path: "/assets/img/backgrounds/112167497_p0.jpg",
-    props: ["horizontal", "dark"],
-  },
-  {
-    path: "/assets/img/backgrounds/113793915_p0.jpg",
-    props: ["horizontal", "dark"],
-  },
-  {
-    path: "/assets/img/backgrounds/109884134_p0.jpg",
-    props: ["horizontal", "light"],
-  },
-  {
-    path: "/assets/img/backgrounds/109884134_p1.jpg",
-    props: ["horizontal", "dark"],
-  },
-  {
-    path: "/assets/img/backgrounds/109884134_p2.jpg",
-    props: ["horizontal", "dark"],
-  },
-  {
-    path: "/assets/img/backgrounds/104805436_p0.jpg",
-    props: ["horizontal", "light"],
-  },
-  {
-    path: "/assets/img/backgrounds/118020641_p0.jpg",
-    props: ["vertical", "light"],
-  },
-  {
-    path: "/assets/img/backgrounds/109453105_p0.jpg",
-    props: ["vertical", "light"],
-  },
-  {
-    path: "/assets/img/backgrounds/107163970_p0.jpg",
-    props: ["vertical", "dark"],
-  },
-  {
-    path: "/assets/img/backgrounds/73492598_p0.jpg",
-    props: ["horizontal", "light"],
-  },
-  {
-    path: "/assets/img/backgrounds/77353796_p0.jpg",
-    props: ["horizontal", "light"],
-  },
-  {
-    path: "/assets/img/backgrounds/104185807_p0.jpg",
-    props: ["horizontal", "light"],
-  },
-  {
-    path: "/assets/img/backgrounds/72114086_p0.jpg",
-    props: ["horizontal", "light"],
-  },
-  {
-    path: "/assets/img/backgrounds/109307377_p0.jpg",
-    props: ["vertical", "dark"],
-  },
-  {
-    path: "/assets/img/backgrounds/visual9.jpg",
-    props: ["vertical", "light"],
-  },
-  {
-    path: "/assets/img/backgrounds/wall09.jpg",
-    props: ["vertical", "light"],
-  },
-  {
-    path: "/assets/img/backgrounds/wall22.jpg",
-    props: ["vertical", "light"],
-  },
-];
+const { variables: vars } = useAppConfig();
 
 const handleClickDown = () => {
   window.scrollTo({
@@ -117,24 +30,23 @@ const handleClickDown = () => {
 
 const bodyRef = useTemplateRef("body");
 
+const quote = computed(() => {
+  const quotes = vars.welcome.quotes;
+  if (quotes && quotes.length > 0) {
+    return quotes[Math.floor(Math.random() * quotes.length)];
+  }
+  return "Welcome to our site!";
+});
+
 onMounted(() => {
   let requiredProps = [];
-  requiredProps.push(
-    document.documentElement.clientWidth > document.documentElement.clientHeight
-      ? "horizontal"
-      : "vertical"
-  );
-  requiredProps.push(
-    window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
-  );
+  requiredProps.push(document.documentElement.clientWidth > document.documentElement.clientHeight ? "horizontal" : "vertical");
+  requiredProps.push(window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 
-  const matchedBackgrounds = backgrounds.filter((background: any) =>
-    requiredProps.every((prop) => background.props.includes(prop))
-  );
+  const matchedBackgrounds = vars.welcome.backgrounds.filter((background: any) => requiredProps.every((prop) => background.props.includes(prop)));
 
   if (bodyRef.value) {
-    const background =
-      matchedBackgrounds[Math.floor(Math.random() * matchedBackgrounds.length)];
+    const background = matchedBackgrounds[Math.floor(Math.random() * matchedBackgrounds.length)];
     bodyRef.value.style.backgroundImage = `url(${background?.path})`;
   }
 });

@@ -1,7 +1,7 @@
 <template>
   <Head>
-    <meta name="description" content="ZYT's Campu-site Blog" />
-    <meta name="keywords" content="zyt,jasonzyt,campu,blog,bio,personal" />
+    <meta name="description" :content="config.siteMeta.description" />
+    <meta name="keywords" :content="config.siteMeta.keywords.join(',')" />
   </Head>
 
   <UApp>
@@ -12,9 +12,10 @@
 </template>
 
 <script setup lang="ts">
+const config = useAppConfig();
 useHead({
   titleTemplate: (titleChunk: any) => {
-    return titleChunk ? `${titleChunk} | ZYT's Campu-site` : "ZYT's Campu-site";
+    return titleChunk ? `${titleChunk} | ${config.siteMeta.name}` : config.siteMeta.name;
   },
 });
 </script>

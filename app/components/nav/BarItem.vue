@@ -6,19 +6,23 @@
     :index="index"
     @mouseover="handleMouseOver"
     @mouseleave="handleMouseLeave"
-    @click="$emit('click', index)"
   >
-    <slot></slot>
+    <NuxtLink :to="to" class="w-full h-full inline-flex items-center" :target="target">
+      <slot />
+    </NuxtLink>
   </li>
 </template>
 
 <script lang="ts" setup>
-defineProps({
+const props = defineProps({
   show: Boolean,
   index: String,
+  to: String,
+  target: {
+    type: String,
+    default: "_self",
+  },
 });
-
-defineEmits(["click"]);
 
 const borderWidth = ref("0");
 
@@ -38,8 +42,7 @@ const handleMouseLeave = () => {
   color: rgb(var(--color-gray-600));
   position: relative;
   cursor: pointer;
-  transition: border-bottom 0.4s ease-in-out, color 0.4s ease-in-out,
-    opacity 0.4s ease-in-out;
+  transition: border-bottom 0.4s ease-in-out, color 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
 
 .item::after {

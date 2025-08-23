@@ -13,12 +13,7 @@
             @mouseenter="handleMouseEnter(index)"
             @mouseleave="handleMouseLeave(index)"
           >
-            <NuxtImg
-              class="size-full object-cover transition-transform duration-500"
-              :src="blog.cover"
-              alt="cover"
-              ref="pin-covers"
-            />
+            <NuxtImg class="size-full object-cover transition-transform duration-500" :src="blog.cover" alt="cover" ref="pin-covers" />
             <Transition name="fade">
               <div
                 class="absolute flex justify-center items-center text-center w-full h-24 p-4 bg-[rgba(0,0,0,0.6)] text-white text-xl font-medium font-sans"
@@ -35,8 +30,6 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
-
 useHead({
   title: null,
 });
@@ -65,9 +58,7 @@ const handleMouseLeave = (index: number) => {
   pinnedShowTitles.value[index] = false;
 };
 
-const pinnedBlogs = await useAsyncData(() =>
-  queryCollection("blog").where("pinned", ">", 0).order("created", "DESC").all()
-).then((res) => {
+const pinnedBlogs = await useAsyncData(() => queryCollection("blog").where("pinned", ">", 0).order("created", "DESC").all()).then((res) => {
   pinnedShowTitles.value.fill(isTouch.value, 0, res.data.value?.length);
   return res.data.value;
 });

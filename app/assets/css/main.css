@@ -110,6 +110,18 @@
     background-color: var(--ui-bg-accented);
   }
 
+  body::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    border-radius: 5px;
+    background-color: var(--ui-bg-elevated);
+  }
+
+  body::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: var(--ui-bg-accented);
+  }
+
   a.link {
     margin: 0 4px;
     color: var(--color-primary-500);
