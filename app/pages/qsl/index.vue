@@ -1,36 +1,32 @@
 <template>
   <div class="main m-auto px-14 py-12 border-2 border-gray-800">
     <div class="flex items-center">
-      <Icon name="my:crac-logo" size="300px" />
+      <Icon name="my:crac-logo" size="290px" />
       <div class="ml-10 flex-1">
-        <h1 class="text-[78px] font-bold">中华人民共和国个人业余无线电台</h1>
-        <h2 class="text-5xl font-normal ml-1.5">Personal Amateur Radio Station of P. R. China</h2>
-        <div class="mt-6 flex">
+        <div class="flex gap-8">
           <div>
-            <h1 class="text-[104px] font-bold font-mono gradient-text">BH6SLW</h1>
-            <h2 class="text-xl font-medium mx-2 flex">
-              <span class="grow">GRID / OM70eo</span>
-              <span class="grow text-center">ITU / 44</span>
-              <span class="grow text-right">CQ / 24</span>
-            </h2>
+            <h1 class="text-6xl font-bold">中华人民共和国个人业余无线电台</h1>
+            <h2 class="text-[42px] font-normal ml-1.5">Personal Amateur Radio Station of P. R. China</h2>
           </div>
-          <ArrowWithLabel label="via" class="mx-8" color="var(--ui-text)" />
-          <QslTableCell class="flex-1" titleBottomLeft="TO RADIO" />
+          <QslTableCell class="flex-1 mb-2" titleTopLeft="QSL No" horizontalAlign="left"># </QslTableCell>
         </div>
+        <div class="mt-4 flex">
+          <div class="mb-2">
+            <h1 class="text-[130px] font-bold gradient-text">BH6SLW</h1>
+          </div>
+          <ArrowWithLabel class="mx-8" label="TO RADIO" color="var(--ui-text)" />
+          <QslTableCell class="flex-1" />
+        </div>
+        <p class="mt-5 text-[27px] font-mono font-semibold bg-transparent">CONFIRMING <span class="float-right">[ ] OUR QSO / [ ] YOUR SWL REPORT / [ ] EYEBALL QSO</span></p>
       </div>
     </div>
-    <div class="mt-5 flex">
-      <p class="text-[27px] font-mono font-semibold bg-transparent">No #</p>
-      <div class="grow"></div>
-      <p class="text-[27px] font-mono font-semibold bg-transparent">CFM: [ ] OUR QSO / [ ] YOUR SWL REPORT / [ ] EYEBALL QSO</p>
-    </div>
-    <div class="mt-5 h-32 flex gap-4">
-      <div class="flex-[25%] flex gap-4">
+    <div class="mt-5 h-34 flex gap-4">
+      <div class="flex-[23%] flex gap-4">
         <QslTableCell class="flex-1" titleTopLeft="DATE / Y-m-d">
           <div class="flex w-full">
-            <span class="flex-5/12"></span>
-            <span class="flex-4/12">-</span>
-            <span class="flex-3/12">-</span>
+            <span class="flex-[42%]"></span>
+            <span class="flex-[30%]">-</span>
+            <span class="flex-[28%]">-</span>
           </div>
         </QslTableCell>
       </div>
@@ -43,41 +39,64 @@
           </div>
         </QslTableCell>
       </div>
-      <QslTableCell class="flex-[21.6667%]" titleTopLeft="FREQ / MHz"></QslTableCell>
-      <QslTableCell class="flex-[18.3333%]" titleTopLeft="MODE"></QslTableCell>
-      <QslTableCell class="flex-[15%]" titleTopLeft="RST"></QslTableCell>
+      <QslTableCell class="flex-[23%]" titleTopLeft="FREQ / MHz">
+        <div class="flex flex-col w-full text-2xl font-bold text-toned">
+          <span class="mx-0.5">Rx</span>
+          <span class="mx-0.5 mt-2">Tx</span>
+        </div>
+      </QslTableCell>
+      <QslTableCell class="flex-[14%]" titleTopLeft="MODE"></QslTableCell>
+      <QslTableCell class="flex-[20%]" titleTopLeft="VIA" titleTopRight="SAT / REPEATER"></QslTableCell>
     </div>
-    <div class="mt-4 flex gap-4 h-68">
-      <div class="flex-2/3">
-        <div class="flex h-20 gap-4">
-          <QslTableCell class="flex-[67.85%]" titleTopLeft="RIG"></QslTableCell>
-          <QslTableCell class="flex-[32.15%]" titleTopLeft="PWR"></QslTableCell>
+    <div class="mt-4 h-32 flex gap-4">
+      <QslTableCell class="flex-[23%]" titleTopLeft="RIG"></QslTableCell>
+      <QslTableCell class="flex-[29%]" titleTopLeft="ANT"></QslTableCell>
+      <QslTableCell class="flex-[14%]" titleTopLeft="PWR"></QslTableCell>
+      <QslTableCell class="flex-[14%]" titleTopLeft="RST"></QslTableCell>
+      <!-- <QslTableCell class="flex-[20%]" titleTopLeft="QTH"></QslTableCell> -->
+      <div class="flex-[20%]"></div>
+    </div>
+    <div class="mt-4 h-48 flex gap-4">
+      <div class="flex-[52%]">
+        <QslTableCell class="h-22" titleTopLeft="QTH"></QslTableCell>
+        <QslTableCell class="mt-4 h-22" titleTopLeft="RMKS"></QslTableCell>
+      </div>
+      <QslTableCell class="flex-[28.6%] h-48" horizontalAlign="right" verticalAlign="right" titleTopLeft="OP">
+        <div class="flex-1 flex flex-col font-1">
+          <div class="grow" />
+          <p class="py-2 px-1.5">
+            <span class="text-2xl font-semibold align-text-bottom">PSE / TNX QSL</span>
+            <span class="text-4xl font-bold float-right align-text-bottom">VY 73!</span>
+          </p>
         </div>
-        <div class="mt-4 h-20">
-          <QslTableCell titleTopLeft="ANT" class="h-full"></QslTableCell>
-        </div>
-        <div class="flex gap-4 mt-4 h-20">
+      </QslTableCell>
+      <div class="flex-[19.4%]"></div>
+    </div>
+    <!-- <div class="mt-4 flex gap-4 h-74">
+      <div class="flex-[65.5%]">
+        <div class="flex gap-4 mt-4 h-22">
           <QslTableCell titleTopLeft="RMKS" class="h-full grow"></QslTableCell>
-          <QslTableCell class="h-full font-mono font-bold px-6">VY73!</QslTableCell>
+          <QslTableCell class="h-full font-mono font-bold px-6 text-4xl">VY73!</QslTableCell>
         </div>
       </div>
-      <div class="flex-1/3 h-full flex flex-col gap-4">
-        <QslTableCell class="font-mono h-32 px-6 text-2xl" horizontalAlign="left">
-          <div class="flex items-center gap-6">
-            <span>
-              <p>[ ] PSE</p>
-              <p class="mt-2">[ ] TNX</p>
-            </span>
-            <span>QSL</span>
-            <span>DIRECT</span>
-          </div>
-        </QslTableCell>
-        <QslTableCell class="font-mono h-32 px-6 text-2xl py-4" horizontalAlign="left" verticalAlign="left">OP</QslTableCell>
+      <div class="flex-[34.5%] h-full flex flex-col gap-4">
+        <div class="flex gap-4">
+          <QslTableCell class="flex-[65.22%] h-35 text-2xl" titleTopLeft="QTH"></QslTableCell>
+          <QslTableCell class="flex-[34.78%] h-35 text-[24px]" horizontalAlign="left" titleTopLeft="QSL">
+            <div class="flex items-center font-mono font-medium gap-6">
+              <span>
+                <p>[ ] PSE</p>
+                <p class="mt-2">[ ] TNX</p>
+              </span>
+            </div>
+          </QslTableCell>
+        </div>
+        <QslTableCell class="h-35" horizontalAlign="left" verticalAlign="left" titleTopLeft="OP"></QslTableCell>
       </div>
-    </div>
+    </div> -->
     <div class="mt-6 flex gap-4">
       <div>
-        <p class="text-2xl font-medium bg-transparent">ADDR: (See envelope or email contact)</p>
+        <p class="text-2xl font-medium bg-transparent">Mailing address can be found on envelope or QRZ.com</p>
         <p class="mt-2 text-2xl font-medium bg-transparent">Design by BH6SLW / JacieZYT, shared under CC BY-NC-SA 4.0</p>
       </div>
       <div class="grow"></div>
@@ -107,6 +126,11 @@ definePageMeta({
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  line-height: 1em;
+  line-height: 0.8em;
+  font-family: "Inconsolata", "JetBrains Mono", monospace;
+}
+
+.font-1 {
+  font-family: "Noto Sans", "JetBrains Mono", monospace;
 }
 </style>

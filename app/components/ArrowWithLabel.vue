@@ -1,6 +1,6 @@
 <template>
   <div class="relative flex items-center box-content">
-    <span class="absolute w-full text-2xl text-center bottom-2" v-html="label"></span>
+    <span class="absolute w-full text-2xl text-center font-medium text-toned top-3.5" v-html="label"></span>
     <Icon name="my:long-arrow" :style="{ width, height, color }" />
   </div>
 </template>
@@ -13,7 +13,7 @@ defineProps({
   },
   width: {
     type: String,
-    default: "350px",
+    default: "340px",
   },
   height: {
     type: String,
