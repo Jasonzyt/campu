@@ -53,7 +53,6 @@
       <QslTableCell class="flex-[29%]" titleTopLeft="ANT"></QslTableCell>
       <QslTableCell class="flex-[14%]" titleTopLeft="PWR"></QslTableCell>
       <QslTableCell class="flex-[14%]" titleTopLeft="RST"></QslTableCell>
-      <!-- <QslTableCell class="flex-[20%]" titleTopLeft="QTH"></QslTableCell> -->
       <div class="flex-[20%]"></div>
     </div>
     <div class="mt-4 h-48 flex gap-4">
@@ -62,7 +61,7 @@
         <QslTableCell class="mt-4 h-22" titleTopLeft="RMKS"></QslTableCell>
       </div>
       <QslTableCell class="flex-[28.6%] h-48" horizontalAlign="right" verticalAlign="right" titleTopLeft="OP">
-        <div class="flex-1 flex flex-col font-1">
+        <div class="flex-1 flex flex-col font-noto">
           <div class="grow" />
           <p class="py-2 px-1.5">
             <span class="text-2xl font-semibold align-text-bottom">PSE / TNX QSL</span>
@@ -72,28 +71,6 @@
       </QslTableCell>
       <div class="flex-[19.4%]"></div>
     </div>
-    <!-- <div class="mt-4 flex gap-4 h-74">
-      <div class="flex-[65.5%]">
-        <div class="flex gap-4 mt-4 h-22">
-          <QslTableCell titleTopLeft="RMKS" class="h-full grow"></QslTableCell>
-          <QslTableCell class="h-full font-mono font-bold px-6 text-4xl">VY73!</QslTableCell>
-        </div>
-      </div>
-      <div class="flex-[34.5%] h-full flex flex-col gap-4">
-        <div class="flex gap-4">
-          <QslTableCell class="flex-[65.22%] h-35 text-2xl" titleTopLeft="QTH"></QslTableCell>
-          <QslTableCell class="flex-[34.78%] h-35 text-[24px]" horizontalAlign="left" titleTopLeft="QSL">
-            <div class="flex items-center font-mono font-medium gap-6">
-              <span>
-                <p>[ ] PSE</p>
-                <p class="mt-2">[ ] TNX</p>
-              </span>
-            </div>
-          </QslTableCell>
-        </div>
-        <QslTableCell class="h-35" horizontalAlign="left" verticalAlign="left" titleTopLeft="OP"></QslTableCell>
-      </div>
-    </div> -->
     <div class="mt-6 flex gap-4">
       <div>
         <p class="text-2xl font-medium bg-transparent">Mailing address can be found on envelope or QRZ.com</p>
@@ -130,7 +107,7 @@ definePageMeta({
   font-family: "Inconsolata", "JetBrains Mono", monospace;
 }
 
-.font-1 {
-  font-family: "Noto Sans", "JetBrains Mono", monospace;
+.font-noto {
+  font-family: "Noto Sans", sans-serif;
 }
 </style>
