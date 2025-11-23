@@ -210,16 +210,8 @@ const gameList = [
     server: "Java/BE",
   },
   {
-    name: "战舰世界",
-    server: "Asia",
-  },
-  {
-    name: "原神",
-    server: "CN_Official",
-  },
-  {
-    name: "战地5",
-    server: "-",
+    name: "灵魂摆渡人",
+    server: "Spiritfarer",
   },
   {
     name: "雨中冒险",
@@ -228,6 +220,14 @@ const gameList = [
   {
     name: "微软模飞",
     server: "2020",
+  },
+  {
+    name: "战舰世界",
+    server: "Asia",
+  },
+  {
+    name: "原神",
+    server: "CN_Official",
   },
 ];
 
