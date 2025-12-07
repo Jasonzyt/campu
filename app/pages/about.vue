@@ -7,7 +7,7 @@
         <UAvatar size="3xl" src="https://avatars.githubusercontent.com/u/66063199" :ui="{ root: 'size-32 md:size-56 text-4xl' }" />
         <h1 class="text-3xl md:text-5xl" id="name">
           Jacie ZYT
-          <span id="pronoun" class="mx-1 text-xl md:text-2xl font-normal text-muted">they/she</span>
+          <span id="pronoun" class="mx-1 text-xl md:text-2xl font-normal text-muted">she/her</span>
         </h1>
       </div>
     </div>
@@ -27,9 +27,9 @@
           除写码之外, 我也很喜欢拍照📷~ 是风光佬, 偶尔拍人文<br />
           喜欢各种交通工具, 尤其是飞机✈️和火车🚅!! <del>立志拍到全天下的所有飞机和火车</del><br />
           你可以在<NuxtLink class="link" to="/gallery">Gallery</NuxtLink>看到我的作品! 谢谢你的喜欢! <br />
-          我也研究业余无线电! 只有几台UV段的手台, <code>DE BH6SLW</code><br />
+          我也研究业余无线电! 只有几台 UV 段的手台, 呼号<code>BH6SLW</code>, 目前活跃于 FM 卫星<br />
           摇曳露营△大好き, 有一套露营装备, 冬天应该会去露营, <del>夏天野外的虫子太可怕了</del><br />
-          有时候会打电动, 不是很擅长FPS游戏, 想和我玩的话只要有空随时可以! <br />
+          有时候会打电动, 不是很擅长 FPS 游戏, 想和我玩的话只要有空随时可以! <br />
           喜欢看动画, <del>百合什么的最喜欢啦</del><br />
           可以用中文/English与我交流, 日语还在自学ing...<br />
           我对所有人都很友好! 不会主动与别人产生冲突<br />
